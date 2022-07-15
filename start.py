@@ -3,6 +3,7 @@ from factori import PersonFactory  # фабрика
 from decotator import time_text  # Декоратор
 from command import Resolver  # команды
 from frontage import Facade  # Фасад
+from observer import Newspaper, Citizen  # Наблюдатель
 
 print('синглтон:')
 ex1 = Singleton()
@@ -31,3 +32,8 @@ f = Facade()
 f.write('Hello world!')  # Hello world!
 f.write('Hello world!')  # Ошибка: Бумага закончилась
 
+print('Наблюдатель:')
+newspaper = Newspaper()  # создаем небольшую газету
+newspaper.register(Citizen('Иван'))  # добавляем двух человек, которые
+newspaper.register(Citizen('Василий'))  # ... ее регулярно выписывают
+newspaper.add_news('Наблюдатель - поведенческий шаблон проектирования')
