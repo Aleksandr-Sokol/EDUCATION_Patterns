@@ -1,6 +1,7 @@
 from singleton import Singleton  # синглтон
 from factori import PersonFactory # фабрика
 from decotator import time_text # Декоратор
+from command import Resolver # команды
 
 print('синглтон:')
 ex1 = Singleton()
@@ -18,5 +19,11 @@ print('Декоратор:')
 def fun():
     return 1
 print(fun())
+
+print('команды:')
+r = Resolver()
+data = {}
+r.dispatch("COMMAND-1", data=data)
+
 
 
