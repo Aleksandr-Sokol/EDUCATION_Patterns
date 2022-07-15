@@ -1,7 +1,8 @@
 from singleton import Singleton  # синглтон
-from factori import PersonFactory # фабрика
-from decotator import time_text # Декоратор
-from command import Resolver # команды
+from factori import PersonFactory  # фабрика
+from decotator import time_text  # Декоратор
+from command import Resolver  # команды
+from frontage import Facade  # Фасад
 
 print('синглтон:')
 ex1 = Singleton()
@@ -25,5 +26,8 @@ r = Resolver()
 data = {}
 r.dispatch("COMMAND-1", data=data)
 
-
+print('Фасад:')
+f = Facade()
+f.write('Hello world!')  # Hello world!
+f.write('Hello world!')  # Ошибка: Бумага закончилась
 
